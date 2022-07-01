@@ -39,16 +39,31 @@ Nesse projeto é feito o uso do [ESLint](https://eslint.org/), para roda-lo bast
         * `docker ps`
 
 <summary><strong>Docker</strong></summary><br />
-    Este projeto possui um Dockerfile
-    
-<summary><h4> Testes de cobertura </h4></summary><br/>
 
-* Neste projeto foram feitos testes em *TypeScript*, utilizando Jest na pasta _tests_.
+Este projeto possui um Dockerfile, para subir o conteiner do projeto siga os seguintes passos:
+
+1. Use o comando abaixo para remover todos os containers e imagens Docker que estejam em seu computador:
+    * `docker system prune -af`
+
+2. Para processar o arquivo Dockerfile use o comando:
+    * `docker build -t <nome-da-imagem> .`
+    * Esse comando irá criar uma imagem com o nome que você escolher.
+    * Para conferir rode o comando `docker images`.
+
+3. Para executar o container a partir da imagem criada usando Dockerfile rode o seguinte comando:
+    * `docker container run --name <nome-do-container> -p 3000:3000 <nome-da-imagem>`
+
+Pronto, já pode acessar o site pelo localhost na porta 3000.
+
+    
+<summary><strong>Testes de cobertura</strong></summary><br />
+
+* Neste projeto foram feitos testes em *TypeScript*, utilizando Jest na pasta `_tests_`.
 * Para rodar os tests utilize o comando a seguir:
     * `yarn test` ou `npm run test`
 
 
-Neste projeto foi criado uma versão simplificada de uma loja de vinhos. Nele os usuários poderão:
+<h4>Neste projeto foi criado uma versão simplificada de uma loja de vinhos. Nele os usuários poderão:</h4>
 
 1. Fazer login
 
