@@ -49,9 +49,21 @@ Nesse projeto é feito o uso do [ESLint](https://eslint.org/), para roda-lo bast
 
 
 Neste projeto foi criado uma versão simplificada de uma loja de vinhos. Nele os usuários poderão:
-    - Pesquisar produto por título a parti da API da Wine;
-    - Adicionar ou remover produto do carrinho em diferentes quantidades;
-    - Avançar e retroceder páginas do catálogo de produtos;
-    - Filtrar produtos por preço;
-    - Visualizar detalhes do produto;
-    - Finalizar uma compra simulada;
+
+- Fazer login
+
+- Editar perfil;
+
+- Salvar produtos na página de favoritos;
+
+- Pesquisar produto por título a parti da API da Wine;
+
+- Adicionar ou remover produto do carrinho em diferentes quantidades;
+
+- Avançar e retroceder páginas do catálogo de produtos;
+
+- Filtrar produtos por preço;
+
+- Visualizar detalhes do produto;
+
+- Finalizar uma compra simulada;
