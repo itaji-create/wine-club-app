@@ -4,23 +4,18 @@ import Link from "next/link";
 const Nav: NextPage = () => {
   return (
     <nav>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/profile">
-            <a>Profile</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/catalog">
-            <a>Catalogo</a>
-          </Link>
-        </li>
-      </ul>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Link href="/profile">
+        <a>Profile</a>
+      </Link>
+      <Link href="/carrinho">
+        <a>Carrinho</a>
+      </Link>
+      <Link href="/catalog">
+        <a>Catalogo</a>
+      </Link>
     </nav>
   )
 }
