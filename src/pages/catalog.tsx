@@ -3,6 +3,7 @@ import React from 'react';
 
 import Header from '../components/header';
 import Cards from '../components/cards';
+import PriceFilter from '../components/sidebar';
 
 const CatalogPage: NextPage = () => {
 
@@ -10,7 +11,10 @@ const CatalogPage: NextPage = () => {
     <div>
       <Header />
       <h1 data-testid="title">Bem vindo ao catalogo</h1>
-      <Cards />
+      <div style={ { display: 'flex' } }>
+        <Cards />
+        <PriceFilter />
+      </div>
     </div>
   )
 }

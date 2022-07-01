@@ -2,12 +2,12 @@
 
 <summary><strong> Iniciando o projeto</strong></summary><br />
 
-1. Clone o projeto
+1. Clone o projeto com o comando:
     * `git clone git@github.com:itaji-create/wine-club-app.git`
-    * Entre na pasta do projeto
-2. Instale as dependências
+    * Entre na pasta do projeto;
+2. Instale as dependências:
     * `npm install`
-3. Inicialize o projeto
+3. Inicie o projeto:
     * `yarn dev` ou `npm run dev`
 
 <summary><strong>Dependências do projeto</strong></summary><br />
@@ -29,7 +29,7 @@ Nesse projeto é feito o uso do [ESLint](https://eslint.org/), para roda-lo bast
 
 1. Sistema Operacional Linux
 2. Node
-    * `deve ter versão igual ou superior à 16`.
+    * `deve ter versão igual ou superior à 16`
     * Rode os comandos abaixo para instalar a versão correta do node:
         * `nvm install 16 --lts`
         * `nvm use 16`
@@ -48,9 +48,9 @@ Este projeto possui um Dockerfile, para subir o conteiner do projeto siga os seg
 2. Para processar o arquivo Dockerfile use o comando:
     * `docker build -t <nome-da-imagem> .`
     * Esse comando irá criar uma imagem com o nome que você escolher.
-    * Para conferir rode o comando `docker images`.
+    * Para conferir, rode o comando `docker images`
 
-3. Para executar o container a partir da imagem criada usando Dockerfile rode o seguinte comando:
+3. Para executar o container a partir da imagem criada usando Dockerfile, rode o seguinte comando:
     * `docker container run --name <nome-do-container> -p 3000:3000 <nome-da-imagem>`
 
 Pronto, já pode acessar o site pelo localhost na porta 3000.
@@ -71,7 +71,7 @@ Pronto, já pode acessar o site pelo localhost na porta 3000.
 
 3. Salvar produtos na página de favoritos;
 
-4. Pesquisar produto por título a parti da API da Wine;
+4. Pesquisar produto por título a partir da API Rest da Wine;
 
 5. Adicionar ou remover produto do carrinho em diferentes quantidades;
 
