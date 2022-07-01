@@ -1,7 +1,5 @@
-import { NextPage } from "next";
-import Link from "next/link";
-import Nav from "../components/nav";
-
+import { NextPage } from 'next';
+import Nav from '../components/nav';
 
 const Header: NextPage = () => {
   return (
