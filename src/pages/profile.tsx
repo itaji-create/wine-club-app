@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Nav from "../components/nav";
+import Header from "../components/header";
 
 const ProfilePage: NextPage = () => {
   return (
     <div>
-      <Nav />
+      <Header />
         <h2>Ola usuario</h2>
         <Link href="/">
           <button type="button">

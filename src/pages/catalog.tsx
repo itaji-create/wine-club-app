@@ -33,9 +33,9 @@ const CatalogPage: NextPage = () => {
                     <a>{ e.name }</a>
                 </Link>
               </nav>
-              <p>{ e.price }</p>
+              <p>R${ e.price }</p>
               <p>SÓCIO WINE R${ e.priceMember }</p>
-              <p>NÃO SÓCIO{ e.priceNonMember }</p>
+              <p>NÃO SÓCIO R${ e.priceNonMember }</p>
             </div>
             <button type='button'>
               Adicionar
