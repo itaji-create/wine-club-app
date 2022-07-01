@@ -1,5 +1,5 @@
-async function fetchWineApi() {
-  const response = await fetch('https://wine-back-test.herokuapp.com/products?page=1&limit=10');
+async function fetchWineApi(page: number = 1) {
+  const response = await fetch(`https://wine-back-test.herokuapp.com/products?page=${page}&limit=10`);
   const data = await response.json();
   return data;
 }

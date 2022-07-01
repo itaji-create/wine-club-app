@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Login from '../src/pages/index';
 
-describe('Render page Login', () => {
+describe('Render Login Page', () => {
   beforeEach(() => {
     render(<Login />);
   });
