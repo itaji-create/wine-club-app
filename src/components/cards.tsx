@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
+import Button from './buttons/nextPreviousPage';
+import Add from './buttons/addCartButton';
+
 import fetchWineApi from '../services/fetchWineApi';
 
 const Cards: NextPage = () => {
@@ -20,6 +23,7 @@ const Cards: NextPage = () => {
   useEffect(() => {
     fetchWineApi(count).then((data) => setWines(data.items));
   }, [count]);
+
   return (
     <div>
       <p id='productsQtd'>{wines.length} produtos encontrados</p>
@@ -38,14 +42,15 @@ const Cards: NextPage = () => {
             <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
             <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
           </div>
-          <button type='button'>Adicionar</button>
+          <Add>Adicionar</Add>
         </div>
       ))}
       </div>
       <div>
-        {count > 1 && <button type='button' onClick={ () => setCount(count - 1) }>Anterior</button>}
+        {count > 1 && (
+          <Button type='button' onClick={ () => setCount(count - 1) }>{ '<< Anterior' }</Button>)}
         {wines.length > 9 && (
-          <button type='button' onClick={ () => setCount(count + 1) }>Próximo</button>
+          <Button type='button' onClick={ () => setCount(count + 1) }>{ 'Próximo >>' }</Button>
         )}
       </div>
     </div>

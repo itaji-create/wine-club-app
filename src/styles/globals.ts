@@ -44,7 +44,7 @@ export default createGlobalStyle`
   }
 
   #filterContainer {
-    background-color: whitesmoke;
+    background-color: #DEDEDE;
     margin-top: -35px;
     padding: 10px;
     min-width: 200px;
@@ -60,9 +60,10 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 200px;
+    width: 250px;
     text-align: center;
-    margin: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
   }
 
   .productCardContent {
