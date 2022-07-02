@@ -5,11 +5,14 @@ import Header from '../components/header';
 
 const ProfilePage: NextPage = () => {
   const userString = localStorage.getItem('userOnline');
-  const user = JSON.parse(userString);
+  const u = '{"username":"Usuário","password":"123546"}';
+
+  const user = JSON.parse(userString || u);
+
   return (
     <div>
       <Header />
-        <h2>Ola {user.email}</h2>
+        <h2>Ola {user.username}</h2>
         <Link href='/'>
           <button type='button'>
             Logout

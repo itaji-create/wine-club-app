@@ -7,6 +7,8 @@ import React, { useState, useEffect } from 'react';
 import Button from './buttons/nextPreviousPage';
 import Add from './buttons/addCartButton';
 
+import addToShoppingCart from '../utils/addToShoppingCart';
+
 import fetchWineApi from '../services/fetchWineApi';
 
 const Cards: NextPage = () => {
@@ -42,7 +44,7 @@ const Cards: NextPage = () => {
             <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
             <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
           </div>
-          <Add>Adicionar</Add>
+          <Add onClick={ ({ target }) => addToShoppingCart(target) }>Adicionar</Add>
         </div>
       ))}
       </div>
