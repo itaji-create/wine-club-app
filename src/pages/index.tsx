@@ -1,12 +1,15 @@
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import React, { useState } from 'react';
+
+import handleClick from '../utils/handleClickLoginPage';
 
 // eslint-disable-next-line max-lines-per-function
 const Home: React.FC = () => {
-  const router = useRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [off, setOff] = useState(true);
+
+  const user = { username, password };
 
   function handleChange(e: unknown): void {
     const { value, name } = e.target;
@@ -18,24 +21,6 @@ const Home: React.FC = () => {
     if (name === 'password') {
       setPassword(value);
     }
-  }
-
-  function handleClick(): void {
-    const user = { username, password };
-    const usersString = localStorage.getItem('users');
-
-    localStorage.setItem('userOnline', JSON.stringify(user));
-    if (usersString) {
-      const users = JSON.parse(usersString);
-      const exist = users.some((e: { username: string; }) => e.username === user.username);
-      if (!exist) {
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-      }
-    } else {
-      localStorage.setItem('users', JSON.stringify([user]));
-    }
-    router.push('/catalog');
   }
 
   return (
@@ -55,12 +40,14 @@ const Home: React.FC = () => {
           data-testid="pw-input"
         />
         <br />
-        <button type="button" className='loginItem' onClick={ handleClick }
-          data-testid="login-btn"
-          disabled={ off }
-        >
-          Login
-        </button>
+        <Link href='/catalog'>
+          <button type="button" className='loginItem' onClick={ () => handleClick(user) }
+            data-testid="login-btn"
+            disabled={ off }
+          >
+            Login
+          </button>
+        </Link>
       </div>
 
     </div>

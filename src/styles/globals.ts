@@ -11,15 +11,20 @@ export default createGlobalStyle`
   }
 
   #header {
-    background-color: #FFFFFF;
+    background:linear-gradient(to bottom, #77193e 1%, white 20%);
     border-bottom: solid grey;
     height: 60px;
+  }
+
+  #header h1 {
+    color: #77193e;
   }
 
   .nav-item {
     margin-right: 5px;
     text-decoration: none;
-    color: blueviolet;
+    color: #77193e;
+    font-weight: 400;
   }
 
   #loginPage {
@@ -69,9 +74,10 @@ export default createGlobalStyle`
   .productCardContent {
     margin-bottom: 15px;
     text-decoration: none;
-    padding: 10px;
-    height: 300px;
+    width: 256px;
+    height: 333px;
     box-shadow: 2px 4px 10px grey;
+    border-radius: 5px;
   }
   .productCardContent .title {
     text-decoration: none;
@@ -87,6 +93,7 @@ export default createGlobalStyle`
 
   #catalogPage #welcome {
     margin-left: 220px;
+    color: #77193e;
   }
 
   #productsQtd {

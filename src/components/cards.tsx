@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
-import Button from './buttons/nextPreviousPage';
-import Add from './buttons/addCartButton';
+import Button from '../styles/buttons/nextPreviousPage';
+import Add from '../styles/buttons/addCartButton';
 
 import addToShoppingCart from '../utils/addToShoppingCart';
 
@@ -36,7 +36,7 @@ const Cards: NextPage = () => {
             <Image
               src={ e.image }
               alt={ e.name }
-              width={200}
+              width={230}
               height={180}
             />
             <Link href={ `/wine-details/${e.id}` }><a className='title'>{ e.name }</a></Link>
