@@ -9,7 +9,6 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
-    "plugin:mocha/recommended",
     "plugin:@next/next/recommended",
     "airbnb-typescript/base"
   ],

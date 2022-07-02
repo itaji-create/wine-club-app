@@ -4,16 +4,16 @@ import Link from 'next/link';
 const Nav: NextPage = () => (
     <nav>
       <Link href='/'>
-        <a>Home</a>
+        <a className='nav-item'>Home</a>
       </Link>
       <Link href='/profile'>
-        <a>Profile</a>
+        <a className='nav-item'>Profile</a>
       </Link>
       <Link href='/carrinho'>
-        <a>Carrinho</a>
+        <a className='nav-item'>Carrinho</a>
       </Link>
       <Link href='/catalog'>
-        <a>Catalogo</a>
+        <a className='nav-item'>Catalogo</a>
       </Link>
     </nav>
 );

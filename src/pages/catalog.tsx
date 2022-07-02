@@ -7,12 +7,12 @@ import Cards from '../components/cards';
 import PriceFilter from '../components/sidebar';
 
 const CatalogPage: NextPage = () => (
-  <div>
+  <div id='catalogPage'>
     <Header />
-    <h1 data-testid="title">Bem vindo ao catalogo</h1>
-    <div style={ { display: 'flex' } }>
-      <Cards />
+    <h1 id='welcome' data-testid="title">Bem vindo ao catalogo</h1>
+    <div id='contentCatalogPage'>
       <PriceFilter />
+      <Cards />
     </div>
   </div>
 );

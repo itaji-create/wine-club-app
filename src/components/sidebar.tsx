@@ -5,7 +5,7 @@ const PriceFilter: NextPage = () => {
     console.log(value);
   };
   return (
-    <div style={ { minWidth: '150px' } }>
+    <div id='filterContainer'>
       <h4>Refine sua busca</h4>
       <p>Por preço</p>
       <label htmlFor='input-40'>

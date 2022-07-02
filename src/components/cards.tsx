@@ -22,27 +22,24 @@ const Cards: NextPage = () => {
   }, [count]);
   return (
     <div>
-      <p>{wines.length} produtos encontrados</p>
-      <div style={ { display: 'flex', flexWrap: 'wrap' } }>
+      <p id='productsQtd'>{wines.length} produtos encontrados</p>
+      <div id='cardsContainer'>
       {wines.map((e) => (
-          <div data-testid="product-card" style={ {
-            width: '150px', textAlign: 'center' } } key={ e.id }>
-          <div style={ { minHeight: '300px' } }>
+        <div className='productCard' data-testid="product-card" key={ e.id }>
+          <div className='productCardContent'>
             <Image
               src={ e.image }
               alt={ e.name }
-              width={150}
-              height={150}
+              width={200}
+              height={180}
             />
-            <nav>
-              <Link href={ `/wine-details/${e.id}` }><a>{ e.name }</a></Link>
-            </nav>
-            <p>R${ e.price }</p>
-            <p>SÓCIO WINE R${ e.priceMember }</p>
-            <p>NÃO SÓCIO R${ e.priceNonMember }</p>
+            <Link href={ `/wine-details/${e.id}` }><a className='title'>{ e.name }</a></Link>
+            <p className='price' >R${ e.price }</p>
+            <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
+            <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
           </div>
           <button type='button'>Adicionar</button>
-          </div>
+        </div>
       ))}
       </div>
       <div>

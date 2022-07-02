@@ -1,29 +1,49 @@
+/* eslint-disable import/extensions */
 import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import Login from '../src/pages/index';
+import createMockRouter from './test-utils/createMockRouter';
 
-describe('Render Login Page', () => {
-  test('Itens da página de login', () => {
+describe('Renderiza a pagina Login', () => {
+  it('Itens da página de login', () => {
     render(<Login />);
     const title = screen.getByText('Wine');
-    const emailInput = screen.getByTestId('email-input');
+    const emailInput = screen.getByTestId('username-input');
     const passInput = screen.getByPlaceholderText('senha');
-    expect(emailInput).toBeInTheDocument;
+    expect(emailInput).toBeTruthy();
     expect(passInput).toBeTruthy();
     expect(title).toBeTruthy();
   });
 
-  test('Ao clicar no button, caso os inputs tenham sido preenchidos, será redirecionado para a página catálogo', async () => {
-    const { debug } = render(<Login />);
-    const loginBtn = screen.getByTestId('login-btn');
-    const emailInput = screen.getByTestId('email-input');
-    const passInput = screen.getByTestId('pw-input');
-    userEvent.type(emailInput, 'OlaMundoDoido');
-    userEvent.type(passInput, 'OlaMundo');
-    debug()
-    fireEvent.click(loginBtn);
-    debug();
+  it('Verifica botão login etá desabilitado', async () => {
+    render(<Login />);
+    const button = screen.getByTestId('login-btn');
+    expect(button).toBeDisabled();
+  });
 
-    expect(screen.getByTestId('title')).toBeInTheDocument();
+  it('Verifica botão login fica habilitado ao informar username', async () => {
+    render(<Login />);
+    const emailInput = screen.getByTestId('username-input');
+    const passInput = screen.getByPlaceholderText('senha');
+    const button = screen.getByTestId('login-btn');
+    fireEvent.change(emailInput, { target: { value: 'olaMundo' } });
+    fireEvent.change(passInput, { target: { value: 'ola24dfg' } });
+    expect(button).toBeEnabled();
+  });
+
+  it('muda de pagina', async () => {
+    const { debug } = render(
+      <RouterContext.Provider value={createMockRouter({})}>
+        <Login />
+      </RouterContext.Provider>,
+    );
+    const emailInput = screen.getByTestId('username-input');
+    const passInput = screen.getByPlaceholderText('senha');
+    const button = screen.getByTestId('login-btn');
+    fireEvent.change(emailInput, { target: { value: 'olaMundo' } });
+    fireEvent.change(passInput, { target: { value: 'ola24dfg' } });
+    fireEvent.click(button);
+    expect(screen.getByText('Bem vindo ao catalogo')).toBeTruthy();
   });
 });

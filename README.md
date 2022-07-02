@@ -10,17 +10,20 @@
 3. Inicie o projeto:
     * `yarn dev` ou `npm run dev`
 
-<summary><strong>Dependências do projeto</strong></summary><br />
+<summary><strong>Principais dependências do projeto</strong></summary><br />
 
+* dependencies
     - jest-environment-jsdom
     - next
     - react
     - react-dom
+    - styled-components
+
+* devDependencies
     - eslint
-    - jest
     - ts-node
     - typescript
-    - axios
+    - jest
 
 <summary><strong>Linter</strong></summary><br />
 
