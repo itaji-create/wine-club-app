@@ -20,6 +20,7 @@
     - jest
     - ts-node
     - typescript
+    - axios
 
 <summary><strong>Linter</strong></summary><br />
 

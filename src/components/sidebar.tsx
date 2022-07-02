@@ -1,13 +1,11 @@
 import { NextPage } from 'next';
 
 const PriceFilter: NextPage = () => {
-  const handleClick = ({ target }: any): void => {
-    const value = target.value;
-    console.log(value); 
+  const handleClick = ({ target: value }: never): void => {
+    console.log(value);
   };
-
   return (
-    <form style={ { minWidth: '150px' } }>
+    <div style={ { minWidth: '150px' } }>
       <h4>Refine sua busca</h4>
       <p>Por preço</p>
       <label htmlFor='input-40'>
@@ -30,8 +28,8 @@ const PriceFilter: NextPage = () => {
         <input onClick={ handleClick } value='500' name='filter' id='input-500' type='radio' />
         Acima de R$500
       </label><br />
-    </form>
-  )
-}
+    </div>
+  );
+};
 
 export default PriceFilter;

@@ -1,23 +1,21 @@
-import { NextPage } from "next";
-import Link from "next/link";
+import { NextPage } from 'next';
+import Link from 'next/link';
 
-const Nav: NextPage = () => {
-  return (
+const Nav: NextPage = () => (
     <nav>
-      <Link href="/">
+      <Link href='/'>
         <a>Home</a>
       </Link>
-      <Link href="/profile">
+      <Link href='/profile'>
         <a>Profile</a>
       </Link>
-      <Link href="/carrinho">
+      <Link href='/carrinho'>
         <a>Carrinho</a>
       </Link>
-      <Link href="/catalog">
+      <Link href='/catalog'>
         <a>Catalogo</a>
       </Link>
     </nav>
-  )
-}
+);
 
 export default Nav;
