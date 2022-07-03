@@ -1,8 +1,10 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import FilterByName from './filters/filterByName';
 
 const Nav: NextPage = () => (
     <nav>
+      <FilterByName />
       <Link href='/profile'>
         <a className='nav-item'>Perfil</a>
       </Link>
