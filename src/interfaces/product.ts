@@ -1,7 +1,9 @@
 export default interface Product {
-  title: string,
+  id: string,
+  name: string,
+  image: string,
   price: string,
-  partner: string,
-  noMember: string,
+  priceMember: string,
+  priceNonMember: string,
   qtd: number,
 }

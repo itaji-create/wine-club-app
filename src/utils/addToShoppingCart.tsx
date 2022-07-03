@@ -1,33 +1,32 @@
 import Product from '../interfaces/product';
+import findProductById from './findProductById';
 
-const addToShoppingCart = (e) => {
-  const title = e.parentNode.firstChild.firstChild.nextSibling.innerText;
-  const price = e.parentNode.firstChild.firstChild.nextSibling.nextSibling.innerText;
-  const partner = e.parentNode.firstChild.firstChild.nextSibling.nextSibling.nextSibling.innerText;
-  const noMember = e.parentNode.firstChild
-    .firstChild.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
-  //   const data = JSON.stringify(target.parentNode.firstChild);
-  //   localStorage.setItem('cart', data);
+const addToShoppingCart = async ({ parentNode }: any) => {
+  const { id } = parentNode.childNodes[0];
+
+  const wine = await findProductById(id);
+
   const product = {
-    title,
-    price,
-    partner,
-    noMember,
+    id,
+    name: wine.name,
+    price: wine.price,
+    image: wine.image,
+    priceMember: wine.priceMember,
+    priceNonMember: wine.priceNonMember,
     qtd: 1,
   };
+
   const products = JSON.parse(localStorage.getItem('shoppingCart'));
   if (products) {
-    const exist = products.find((p: Product) => p.title === title);
+    const exist = products.find((p: Product) => p.name === wine.name);
     if (!exist) {
       products.push(product);
       localStorage.setItem('shoppingCart', JSON.stringify(products));
     } else {
       exist.qtd += 1;
-      console.log(exist);
       localStorage.setItem('shoppingCart', JSON.stringify(products));
     }
   } else {
-    console.log([product]);
     localStorage.setItem('shoppingCart', JSON.stringify([product]));
   }
 };

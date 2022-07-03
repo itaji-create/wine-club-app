@@ -7,6 +7,7 @@ const Next = styled.button`
   margin-left: 25%;
   padding: 20px;
   text-align: center;
+  cursor: pointer;
 `;
 
 export default Next;

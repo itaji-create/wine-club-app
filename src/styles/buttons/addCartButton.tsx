@@ -6,9 +6,9 @@ const Add = styled.button`
   width: 256px;
   height: 39.36px;
   border-radius: 5px;
-  border: #7EBC43;
-  :hover {
-    
+  border: none;
+  :target {
+    background-color: #FFFFFF;
   }
   cursor: pointer;
 `;
