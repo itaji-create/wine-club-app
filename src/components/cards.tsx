@@ -39,10 +39,11 @@ const Cards: NextPage = () => {
               query: { details: e.id },
             } }><a className='title'>{ e.name }</a></Link>
             <p className='price' >R${ e.price }</p>
-            <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
+            <p>SÓCIO WINE<a className='member-price'>R${ e.priceMember }</a></p>
+      
             <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
           </div>
-          <Add onClick={ ({ target }) => addToShoppingCart(target) }>Adicionar</Add>
+          <Add onClick={ () => addToShoppingCart(Number(e.id)) }>Adicionar</Add>
         </div>
       ))}
       </div>

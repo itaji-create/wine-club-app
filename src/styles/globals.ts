@@ -92,6 +92,14 @@ export default createGlobalStyle`
     color: #77193e;
   }
 
+  @media(max-width: 800px) {
+    #catalogPage #welcome {
+      margin: 0;
+    }
+  }
+
+
+
   #productsQtd {
     margin-left: 15px;
     margin-bottom: -10px;
@@ -104,6 +112,21 @@ export default createGlobalStyle`
 
   .item-product-details {
     margin-bottom: 50px;
+  }
+
+  .member-price {
+    color: #C81A78;
+    font-size: 23px;
+  }
+
+  .no-member-price {
+    color: #888888;
+    font-style: bold;
+    font-size: 16px;
+  }
+
+  .sidebar {
+    display: 'flex';
   }
 
 `;

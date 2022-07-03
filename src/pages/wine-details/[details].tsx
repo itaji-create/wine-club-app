@@ -7,15 +7,18 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/header';
 import Product from '../../interfaces/product';
 import findProductById from '../../utils/findProductById';
-import Add from '../../styles/buttons/addCartButton';
+import Add from '../../styles/buttons/detailsPage/detailsPageAddButton';
 import addToShoppingCart from '../../utils/addToShoppingCart';
 import DetailsPage from '../../styles/divs/productDetails/index';
 import DetailsContainer from '../../styles/divs/productDetails/productDetails';
 import Sommelier from '../../styles/paragraph/sommelier';
+import Sum from '../../styles/buttons/detailsPage/sumButton';
+import Subtraction from '../../styles/buttons/detailsPage/subtractionButton';
 
 const ProfilePage: NextPage = () => {
   const router = useRouter();
   const [product, setProduct] = useState();
+  const [qtd, setQtd] = useState(1);
   const { details } = router.query;
 
   useEffect(() => {
@@ -32,6 +35,15 @@ const ProfilePage: NextPage = () => {
   // if (product) {
   //   createRating();
   // }
+
+  const handleClick = ({ target }) => {
+    if (target.name === 'sum') {
+      setQtd(qtd + 1);
+    }
+    if (target.name === 'sub' && qtd > 1) {
+      setQtd(qtd - 1);
+    }
+  };
 
   return (
     <div>
@@ -76,7 +88,7 @@ const ProfilePage: NextPage = () => {
                   <i style={ { margin: '5px' } }>{`(${product.avaliations || 0})`}</i>
                 </div>
               </div>
-              <h1 className='partner-price'>
+              <h1 className='member-price'>
                 R${ product.priceMember }
               </h1>
               <p className='no-member-price'>
@@ -86,7 +98,14 @@ const ProfilePage: NextPage = () => {
                 <h4>Comentário do Sommelier</h4>
                 <Sommelier>{product.sommelierComment}</Sommelier>
               </div>
-              <Add onClick={ ({ target }) => addToShoppingCart(target) }>Adicionar</Add>
+              <Add onClick={ () => addToShoppingCart(Number(product.id)) }>
+                <div>
+                  <Subtraction name='sub' onClick={ handleClick }>&#8722;</Subtraction>
+                  <a>{ qtd }</a>
+                  <Sum name='sum' onClick={ handleClick }>&#43;</Sum>
+                </div>
+                <h2>Adicionar</h2>
+              </Add>
             </DetailsContainer>
         </DetailsPage>
       )}

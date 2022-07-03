@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-const Sommelier = styled.div`
+const Sommelier = styled.p`
   font-family: 'Saira', sans-serif;
   font-weight: 400;
   width: 448px;
-  height: 105px;
   color: #666666;
 `;
 

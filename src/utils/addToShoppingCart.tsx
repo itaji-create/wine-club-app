@@ -1,10 +1,9 @@
 import Product from '../interfaces/product';
 import findProductById from './findProductById';
 
-const addToShoppingCart = async ({ parentNode }: any) => {
-  const { id } = parentNode.childNodes[0];
-
+const addToShoppingCart = async (id: number) => {
   const wine = await findProductById(id);
+  console.log(wine);
 
   const product = {
     id,

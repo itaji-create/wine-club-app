@@ -5,5 +5,5 @@ export default interface Product {
   price: string,
   priceMember: string,
   priceNonMember: string,
-  qtd: number,
+  qtd?: number,
 }

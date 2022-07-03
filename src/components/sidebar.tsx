@@ -1,11 +1,12 @@
 /* eslint-disable import/extensions */
 import { NextPage } from 'next';
 import PriceFilter from './filters/filterByPrice';
+import Div from '../styles/divs/div';
 
 const Sidebar: NextPage = () => (
-  <div>
+  <Div>
     <PriceFilter />
-  </div>
+  </Div>
 );
 
 export default Sidebar;
