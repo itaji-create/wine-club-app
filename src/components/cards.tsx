@@ -15,7 +15,6 @@ import getProducts from '../services/getProducts';
 // eslint-disable-next-line max-lines-per-function
 const Cards: NextPage = () => {
   const { products, setProducts } = useProductsProvider();
-  console.log(products);
   const [count, setCount] = useState(1);
   useEffect(() => {
     getProducts(`?page=${count}&limit=10`).then((data) => setProducts(data.items));

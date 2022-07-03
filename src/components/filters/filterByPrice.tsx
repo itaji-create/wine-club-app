@@ -1,8 +1,44 @@
+/* eslint-disable import/extensions */
+/* eslint-disable max-lines-per-function */
 import { NextPage } from 'next';
+import { useProductsProvider } from '../../context/products';
+import Product from '../../interfaces/product';
+import getProducts from '../../services/getProducts';
 
 const PriceFilter: NextPage = () => {
+  const { setProducts } = useProductsProvider();
+
   const handleClick = ({ target: value }: never): void => {
-    console.log(value);
+    switch (value.value) {
+      case '40':
+        // eslint-disable-next-line max-len
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
+          e.priceMember < Number(value.value)
+        ))));
+        break;
+      case '60':
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
+          e.priceMember < Number(value.value) && e.priceMember < 60
+        ))));
+        break;
+      case '100':
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
+          e.priceMember > Number(value.value) && e.priceMember < 200
+        ))));
+        break;
+      case '200':
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
+          e.priceMember > Number(value.value) && e.priceMember < 500
+        ))));
+        break;
+      case '500':
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
+          e.priceMember > Number(value.value)
+        ))));
+        break;
+      default:
+        console.log('Sorry, we are out.');
+    }
   };
   return (
     <div id='filterContainer'>
