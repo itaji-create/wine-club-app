@@ -10,12 +10,6 @@ export default createGlobalStyle`
     background-color: #DEDEDE;
   }
 
-  #header {
-    background:linear-gradient(to bottom, #77193e 1%, white 20%);
-    border-bottom: solid grey;
-    height: 60px;
-  }
-
   #header h1 {
     color: #77193e;
   }
@@ -30,6 +24,8 @@ export default createGlobalStyle`
   #loginPage {
     display: flex;
     justify-content: space-between;
+    border-bottom: solid grey;
+    padding: 3px;
   }
   #loginContainer {
     display: flex;
@@ -76,7 +72,7 @@ export default createGlobalStyle`
     text-decoration: none;
     width: 256px;
     height: 333px;
-    box-shadow: 2px 4px 10px grey;
+    box-shadow: 2px 3px 5px #77193e;
     border-radius: 5px;
   }
   .productCardContent .title {
@@ -99,6 +95,11 @@ export default createGlobalStyle`
   #productsQtd {
     margin-left: 15px;
     margin-bottom: -10px;
+  }
+
+  .filter-item {
+    margin-right: 10px;
+    margin-top: 10px;
   }
 
 `;

@@ -8,7 +8,9 @@ import Header from '../components/header';
 import Product from '../interfaces/product';
 
 const CatalogPage: NextPage = () => {
-  const wines = JSON.parse(localStorage.getItem('shoppingCart') || 'ç,sf,f,çdfsd');
+  // eslint-disable-next-line max-len
+  const init = [{ id: '', name: '', price: '', image: '', priceMember: '', priceNonMember: '', qtd: '' }];
+  const wines = JSON.parse(localStorage.getItem('shoppingCart') || JSON.stringify(init));
 
   return (
     <div id='catalogPage'>

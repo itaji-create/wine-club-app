@@ -10,24 +10,27 @@
 3. Inicie o projeto:
     * `yarn dev` ou `npm run dev`
 
+
 <summary><strong>Principais dependências do projeto</strong></summary><br />
 
-* dependencies
+1. dependencies
     - jest-environment-jsdom
     - next
     - react
     - react-dom
     - styled-components
 
-* devDependencies
+2. devDependencies
     - eslint
     - ts-node
     - typescript
     - jest
 
+
 <summary><strong>Linter</strong></summary><br />
 
 Nesse projeto é feito o uso do [ESLint](https://eslint.org/), para roda-lo basta executar `npm run lint`, caso haja algum problema no código ele será impresso no terminal.
+
 
 <summary><strong>Configurações mínimas que sua máquina deve ter</strong></summary><br />
 
@@ -41,6 +44,7 @@ Nesse projeto é feito o uso do [ESLint](https://eslint.org/), para roda-lo bast
 3. Docker
     * Rode o comando abaixo para garantir que o docker está instalado em sua máquina:
         * `docker ps`
+
 
 <summary><strong>Docker</strong></summary><br />
 
@@ -59,7 +63,7 @@ Este projeto possui um Dockerfile, para subir o conteiner do projeto siga os seg
 
 Pronto, já pode acessar o site pelo localhost na porta 3000.
 
-    
+ 
 <summary><strong>Testes de cobertura</strong></summary><br />
 
 * Neste projeto foram feitos testes em *TypeScript*, utilizando Jest na pasta `_tests_`.

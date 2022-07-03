@@ -1,13 +1,13 @@
 /* eslint-disable import/extensions */
 import { NextPage } from 'next';
+import Header from '../styles/divs/header';
 import Nav from './nav';
 
-const Header: NextPage = () => (
-    <div id='header'
-      style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } }>
+const HeaderComponent: NextPage = () => (
+    <Header id='header'>
       <h1 data-testid='header-title'>WINE</h1>
       <Nav />
-    </div>
+    </Header>
 );
 
-export default Header;
+export default HeaderComponent;

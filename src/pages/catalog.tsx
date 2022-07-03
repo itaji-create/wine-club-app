@@ -4,14 +4,14 @@ import React from 'react';
 
 import Header from '../components/header';
 import Cards from '../components/cards';
-import PriceFilter from '../components/sidebar';
+import Sidebar from '../components/sidebar';
 
 const CatalogPage: NextPage = () => (
   <div id='catalogPage'>
     <Header />
     <h1 id='welcome' data-testid="title">Bem vindo ao catálogo</h1>
     <div id='contentCatalogPage'>
-      <PriceFilter />
+      <Sidebar />
       <Cards />
     </div>
   </div>
