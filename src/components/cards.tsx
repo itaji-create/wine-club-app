@@ -9,7 +9,7 @@ import Add from '../styles/buttons/addCartButton';
 
 import addToShoppingCart from '../utils/addToShoppingCart';
 
-import fetchWineApi from '../services/fetchWineApi';
+import getProducts from '../services/getProducts';
 
 const Cards: NextPage = () => {
   const [count, setCount] = useState(1);
@@ -23,7 +23,7 @@ const Cards: NextPage = () => {
     image: 'https://camo.githubusercontent.com/6a95fb3a94ca8b7b6cf675004fe33dd6a69e1024c1e14320221845bbe59d5b33/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f74657374652d75706c6f61642d62333234612e61707073706f742e636f6d2f6f2f4c6f676f2d57696e652d393930783634302e6a7065673f616c743d6d6564696126746f6b656e3d64303761353136662d363838302d346338632d386465612d373233663336363837643935',
   }]);
   useEffect(() => {
-    fetchWineApi(`?page=${count}&limit=10`).then((data) => setWines(data.items));
+    getProducts(`?page=${count}&limit=10`).then((data) => setWines(data.items));
   }, [count]);
   console.log(wines);
 
@@ -40,7 +40,10 @@ const Cards: NextPage = () => {
               width={230}
               height={180}
             />
-            <Link href={ `/wine-details/${e.id}` }><a className='title'>{ e.name }</a></Link>
+            <Link href={ {
+              pathname: '/wine-details/[details]',
+              query: { details: e.id },
+            } }><a className='title'>{ e.name }</a></Link>
             <p className='price' >R${ e.price }</p>
             <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
             <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>

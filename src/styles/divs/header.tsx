@@ -7,8 +7,8 @@ const Header = styled.button`
   align-items: center;
   width: 100%;
   align-items: 'center';
-  background:linear-gradient(to bottom, #77193e -40%, white 30%);
-  border-bottom: solid grey;
+  background-color: #FFFFFF;
+  border-bottom: 0.5px solid #CCCCCC;
   height: 60px;
 `;
 

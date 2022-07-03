@@ -102,4 +102,8 @@ export default createGlobalStyle`
     margin-top: 10px;
   }
 
+  .item-product-details {
+    margin-bottom: 50px;
+  }
+
 `;
