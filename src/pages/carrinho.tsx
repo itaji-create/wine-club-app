@@ -25,7 +25,7 @@ const CatalogPage: NextPage = () => {
                 width={230}
                 height={180}
               />
-              <Link href={ '/wine-details' }><a className='title'>{ e.name }</a></Link>
+              <Link href={ `/wine-details/${e.id}` }><a className='title'>{ e.name }</a></Link>
               <p className='price' >R${ e.price }</p>
               <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
               <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>

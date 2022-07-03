@@ -11,6 +11,7 @@ import Add from '../styles/buttons/addCartButton';
 import addToShoppingCart from '../utils/addToShoppingCart';
 
 import getProducts from '../services/getProducts';
+import Product from '../interfaces/product';
 
 // eslint-disable-next-line max-lines-per-function
 const Cards: NextPage = () => {
@@ -24,7 +25,7 @@ const Cards: NextPage = () => {
     <div>
       <p id='productsQtd'>{products.length} produtos encontrados</p>
       <div id='cardsContainer'>
-      {products.map((e) => (
+      {products.map((e: Product) => (
         <div className='productCard' data-testid="product-card" key={ e.id }>
           <div id={ `${e.id}` } className='productCardContent'>
             <Image

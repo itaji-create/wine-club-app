@@ -12,28 +12,28 @@ const PriceFilter: NextPage = () => {
     switch (value.value) {
       case '40':
         // eslint-disable-next-line max-len
-        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
-          e.priceMember < Number(value.value)
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product) => (
+          Number(e.priceMember) < Number(value.value)
         ))));
         break;
       case '60':
-        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
-          e.priceMember < Number(value.value) && e.priceMember < 60
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product) => (
+          Number(e.priceMember) < Number(value.value) && Number(e.priceMember) < 60
         ))));
         break;
       case '100':
-        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
-          e.priceMember > Number(value.value) && e.priceMember < 200
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product) => (
+          Number(e.priceMember) > Number(value.value) && Number(e.priceMember) < 200
         ))));
         break;
       case '200':
-        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
-          e.priceMember > Number(value.value) && e.priceMember < 500
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product) => (
+          Number(e.priceMember) > Number(value.value) && Number(e.priceMember) < 500
         ))));
         break;
       case '500':
-        getProducts('').then((data) => setProducts(data.items.filter((e: Product[]) => (
-          e.priceMember > Number(value.value)
+        getProducts('').then((data) => setProducts(data.items.filter((e: Product) => (
+          Number(e.priceMember) > Number(value.value)
         ))));
         break;
       default:
