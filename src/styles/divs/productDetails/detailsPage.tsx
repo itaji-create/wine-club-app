@@ -8,6 +8,10 @@ const DetailsPage = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 100px;
+  @media(max-width: 1200px) {
+    flex-direction: column;
+    /* align-content: stretch; */
+  }
 `;
 
 export default DetailsPage;

@@ -9,6 +9,9 @@ const Subtraction = styled.button`
   font-size: larger;
   font-weight: bold;
   color: #FFFFFF;
+  @media(max-width: 1200px) {
+    display: none;
+  }
   cursor: pointer;
 `;
 

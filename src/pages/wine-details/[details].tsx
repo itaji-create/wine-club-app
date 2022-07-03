@@ -9,7 +9,7 @@ import Product from '../../interfaces/product';
 import findProductById from '../../utils/findProductById';
 import Add from '../../styles/buttons/detailsPage/detailsPageAddButton';
 import addToShoppingCart from '../../utils/addToShoppingCart';
-import DetailsPage from '../../styles/divs/productDetails/index';
+import DetailsPage from '../../styles/divs/productDetails/detailsPage';
 import DetailsContainer from '../../styles/divs/productDetails/productDetails';
 import Sommelier from '../../styles/paragraph/sommelier';
 import Sum from '../../styles/buttons/detailsPage/sumButton';
@@ -88,24 +88,27 @@ const ProfilePage: NextPage = () => {
                   <i style={ { margin: '5px' } }>{`(${product.avaliations || 0})`}</i>
                 </div>
               </div>
-              <h1 className='member-price'>
-                R${ product.priceMember }
-              </h1>
-              <p className='no-member-price'>
-                NÃO SÓCIO R${ product.priceNonMember }
-              </p>
-              <div style={ { marginTop: '80px', marginBottom: '100px' } }>
-                <h4>Comentário do Sommelier</h4>
-                <Sommelier>{product.sommelierComment}</Sommelier>
-              </div>
-              <Add onClick={ () => addToShoppingCart(Number(product.id)) }>
-                <div>
-                  <Subtraction name='sub' onClick={ handleClick }>&#8722;</Subtraction>
-                  <a>{ qtd }</a>
-                  <Sum name='sum' onClick={ handleClick }>&#43;</Sum>
+              <div id='price-container'>
+                <p>{ product.price }</p>
+                <h1 className='member-price'>
+                  R${ product.priceMember }
+                </h1>
+                <p className='no-member-price'>
+                  NÃO SÓCIO R${ product.priceNonMember }
+                </p>
                 </div>
-                <h2>Adicionar</h2>
-              </Add>
+                <div style={ { marginTop: '80px', marginBottom: '100px' } }>
+                  <h4>Comentário do Sommelier</h4>
+                  <Sommelier>{product.sommelierComment}</Sommelier>
+                <Add onClick={ () => addToShoppingCart(Number(product.id)) }>
+                  <div id='qtd-cotainer'>
+                    <Subtraction name='sub' onClick={ handleClick }>&#8722;</Subtraction>
+                    <a>{ qtd }</a>
+                    <Sum name='sum' onClick={ handleClick }>&#43;</Sum>
+                  </div>
+                  <h2>Adicionar</h2>
+                </Add>
+              </div>
             </DetailsContainer>
         </DetailsPage>
       )}

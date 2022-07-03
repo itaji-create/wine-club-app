@@ -10,8 +10,13 @@ const Add = styled.button`
   height: 39.36px;
   border-radius: 5px;
   border: none;
-  :target {
-    background-color: #FFFFFF;
+  @media(max-width: 1200px) {
+    bottom: 0;
+    right: 10px;
+    margin-bottom: 15px;
+    position: fixed;
+    width: 200px;
+    height: 40px;
   }
   cursor: pointer;
 `;

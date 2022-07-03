@@ -98,7 +98,19 @@ export default createGlobalStyle`
     }
   }
 
-
+  @media(max-width: 1200px) {
+    #qtd-cotainer {
+      display: none;
+    }
+    #price-container {
+      bottom: 0;
+      position: fixed;
+      height: 70px;
+      background-color: white;
+      left: 0px;
+      width: 100%;
+    }
+  }
 
   #productsQtd {
     margin-left: 15px;
