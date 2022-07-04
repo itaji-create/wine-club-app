@@ -40,7 +40,6 @@ const Cards: NextPage = () => {
             } }><a className='title'>{ e.name }</a></Link>
             <p className='price' >R${ e.price }</p>
             <p>SÓCIO WINE<a className='member-price'>R${ e.priceMember }</a></p>
-      
             <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
           </div>
           <Add onClick={ () => addToShoppingCart(Number(e.id)) }>Adicionar</Add>

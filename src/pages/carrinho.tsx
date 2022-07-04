@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { NextPage } from 'next';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,15 +9,27 @@ import Product from '../interfaces/product';
 
 const CatalogPage: NextPage = () => {
   // eslint-disable-next-line max-len
-  const init = [{ id: '', name: '', price: '', image: '', priceMember: '', priceNonMember: '', qtd: '' }];
-  const wines = JSON.parse(localStorage.getItem('shoppingCart') || JSON.stringify(init));
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('shoppingCart'));
+    setProducts(data);
+  }, []);
+
+  function handleClick(id: number) {
+    const result = products.findIndex((product: Product) => Number(product.id) === id);
+    products.splice(result, 1);
+    localStorage.setItem('shoppingCart', JSON.stringify(products));
+    document.getElementById(`product-card-${id}`)?.remove();
+  }
 
   return (
     <div id='catalogPage'>
       <Header />
       <div id='cardsContainer'>
-        {wines && wines.map((e: Product) => (
-          <div className='productCard' data-testid={`product-card-${e.id}}`} key={ e.id }>
+        {products && products.map((e: Product) => (
+          <div className='productCard' id={`product-card-${e.id}`} key={ e.id }>
+            <button onClick={ () => handleClick(Number(e.id)) }>X</button>
             <div className='productCardContent'>
               <Image
                 src={ e.image }
@@ -36,6 +48,6 @@ const CatalogPage: NextPage = () => {
         </div>
     </div>
   );
-}
+};
 
 export default CatalogPage;
