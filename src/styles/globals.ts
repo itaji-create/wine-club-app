@@ -52,7 +52,7 @@ export default createGlobalStyle`
 
   #cardsContainer {
     display: flex;
-    /* align-items: center; */
+    justify-content: space-evenly;
     flex-wrap: wrap;
   }
 
@@ -88,11 +88,11 @@ export default createGlobalStyle`
 
   @media(max-width: 800px) {
     .product-card-content {
-      width: 150px;
+      width: 156px;
       height: 348px;
     }
     .product-card {
-      width: 150px;
+      width: 156px;
     }
   }
 
@@ -103,7 +103,7 @@ export default createGlobalStyle`
 
   @media(max-width: 800px) {
     #catalogPage #welcome {
-      margin: 0;
+      display: none;
     }
   }
 
