@@ -38,10 +38,15 @@ export default createGlobalStyle`
   .loginItem-ipt {
     margin-left: 10px;
   }
-
-  #contentCatalogPage {
+  #content-catalog-page {
     display: flex;
     font-family: 'Lato', sans-serif;
+  }
+
+  @media(max-width: 1000px) {
+    #content-catalog-page {
+
+    }
   }
 
   #filterContainer {
@@ -53,11 +58,11 @@ export default createGlobalStyle`
 
   #cardsContainer {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
   }
 
-  .productCard {
+  .product-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,24 +72,34 @@ export default createGlobalStyle`
     margin-top: 15px;
   }
 
-  .productCardContent {
-    margin-bottom: 15px;
+  .product-card-content {
+    margin-bottom: 10px;
     text-decoration: none;
     width: 256px;
     height: 333px;
     box-shadow: 2px 3px 5px #77193e;
     border-radius: 5px;
   }
-  .productCardContent .title {
+  .product-card-content .title {
     text-decoration: none;
     color: #1D1D1B;
   }
 
-  .productCardContent .price {
+  .product-card-content .price {
     padding: 2px;
     color: #888888;
     text-decoration: line-through;
     font-size: smaller;
+  }
+
+  @media(max-width: 800px) {
+    .product-card-content {
+      width: 156px;
+      height: 348px;
+    }
+    .product-card {
+      width: 150px;
+    }
   }
 
   #catalogPage #welcome {

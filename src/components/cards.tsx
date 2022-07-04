@@ -26,8 +26,8 @@ const Cards: NextPage = () => {
       <p id='productsQtd'>{products.length} produtos encontrados</p>
       <div id='cardsContainer'>
       {products.map((e: Product) => (
-        <div className='productCard' data-testid="product-card" key={ e.id }>
-          <div id={ `${e.id}` } className='productCardContent'>
+        <div className='product-card' data-testid="product-card" key={ e.id }>
+          <div id={ `${e.id}` } className='product-card-content'>
             <Image
               src={ e.image }
               alt={ e.name }

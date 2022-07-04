@@ -7,6 +7,9 @@ const Add = styled.button`
   height: 39.36px;
   border-radius: 5px;
   border: none;
+  @media(max-width: 800px) {
+    width: 156px;
+  }
   cursor: pointer;
 `;
 

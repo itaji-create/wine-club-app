@@ -88,5 +88,3 @@ Pronto, já pode acessar o site pelo localhost na porta 3000.
 7. Filtrar produtos por preço;
 
 8. Visualizar detalhes do produto;
-
-9. Finalizar uma compra simulada;

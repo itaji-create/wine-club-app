@@ -10,7 +10,7 @@ const CatalogPage: NextPage = () => (
   <div id='catalogPage'>
     <Header />
     <h1 id='welcome' data-testid="title">Bem vindo ao catálogo</h1>
-    <div id='contentCatalogPage'>
+    <div id='content-catalog-page'>
       <Sidebar />
       <Cards />
     </div>
