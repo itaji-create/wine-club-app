@@ -13,6 +13,7 @@ const CatalogPage: NextPage = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('shoppingCart'));
+    console.log(products);
     setProducts(data);
   }, []);
 
@@ -27,10 +28,10 @@ const CatalogPage: NextPage = () => {
     <div id='catalogPage'>
       <Header />
       <div id='cardsContainer'>
-        {products && products.map((e: Product) => (
-          <div className='productCard' id={`product-card-${e.id}`} key={ e.id }>
+        {products.length > 0 && products.map((e: Product) => (
+          <div className='product-card' id={`product-card-${e.id}`} key={ e.id }>
             <Delete onClick={ () => handleClick(Number(e.id)) }>x</Delete>
-            <div className='productCardContent'>
+            <div className='product-card-content'>
               <Image
                 src={ e.image }
                 alt={ e.name }
@@ -39,7 +40,7 @@ const CatalogPage: NextPage = () => {
               />
               <Link href={ `/wine-details/${e.id}` }><a className='title'>{ e.name }</a></Link>
               <p className='price' >R${ e.price }</p>
-              <p className='partner-price'>SÓCIO WINE R${ e.priceMember }</p>
+              <p className='member-price'>SÓCIO WINE R${ e.priceMember }</p>
               <p className='no-member-price'>NÃO SÓCIO R${ e.priceNonMember }</p>
               <p>Quantidade: { e.qtd }</p>
             </div>

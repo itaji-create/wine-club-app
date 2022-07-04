@@ -99,6 +99,7 @@ export default createGlobalStyle`
     }
     .product-card {
       width: 150px;
+      margin-left: 12%;
     }
   }
 

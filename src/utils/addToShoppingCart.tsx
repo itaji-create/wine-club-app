@@ -3,8 +3,6 @@ import findProductById from './findProductById';
 
 const addToShoppingCart = async (id: number) => {
   const wine = await findProductById(id);
-  console.log(wine);
-
   const product = {
     id,
     name: wine.name,
