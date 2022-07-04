@@ -89,7 +89,9 @@ const ProfilePage: NextPage = () => {
                 </div>
               </div>
               <div id='price-container'>
-                <p>{ product.price }</p>
+                <p style={ { textDecoration: 'line-through', color: '#555555' } }>
+                  R${ product.price }
+                </p>
                 <h1 className='member-price'>
                   R${ product.priceMember }
                 </h1>

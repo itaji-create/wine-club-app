@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 import Header from '../components/header';
 import Product from '../interfaces/product';
+import Delete from '../styles/buttons/shoppingCart/deleteCardBtn';
 
 const CatalogPage: NextPage = () => {
-  // eslint-disable-next-line max-len
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const CatalogPage: NextPage = () => {
       <div id='cardsContainer'>
         {products && products.map((e: Product) => (
           <div className='productCard' id={`product-card-${e.id}`} key={ e.id }>
-            <button onClick={ () => handleClick(Number(e.id)) }>X</button>
+            <Delete onClick={ () => handleClick(Number(e.id)) }>x</Delete>
             <div className='productCardContent'>
               <Image
                 src={ e.image }
