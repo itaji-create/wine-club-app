@@ -43,12 +43,6 @@ export default createGlobalStyle`
     font-family: 'Lato', sans-serif;
   }
 
-  @media(max-width: 1000px) {
-    #content-catalog-page {
-
-    }
-  }
-
   #filterContainer {
     background-color: #DEDEDE;
     margin-top: -35px;
@@ -68,7 +62,7 @@ export default createGlobalStyle`
     justify-content: space-between;
     width: 250px;
     text-align: center;
-    margin-left: 15px;
+    margin-left: 3%;
     margin-top: 15px;
   }
 
@@ -94,12 +88,11 @@ export default createGlobalStyle`
 
   @media(max-width: 800px) {
     .product-card-content {
-      width: 156px;
+      width: 150px;
       height: 348px;
     }
     .product-card {
       width: 150px;
-      margin-left: 12%;
     }
   }
 

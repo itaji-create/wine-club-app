@@ -28,7 +28,7 @@ const CatalogPage: NextPage = () => {
     <div id='catalogPage'>
       <Header />
       <div id='cardsContainer'>
-        {products.length > 0 && products.map((e: Product) => (
+        {products && products.map((e: Product) => (
           <div className='product-card' id={`product-card-${e.id}`} key={ e.id }>
             <Delete onClick={ () => handleClick(Number(e.id)) }>x</Delete>
             <div className='product-card-content'>
