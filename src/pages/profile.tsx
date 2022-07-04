@@ -12,7 +12,7 @@ const ProfilePage: NextPage = () => {
   return (
     <div>
       <Header />
-        <h2>Ola {user.username}</h2>
+        <h2>Acabouu {user.username}</h2>
         <Link href='/'>
           <button type='button'>
             Logout

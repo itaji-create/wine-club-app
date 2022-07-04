@@ -1,5 +1,9 @@
 # Boas vindas ao repositório do projeto de Front-End Wine Club!
 
+<summary><strong>Link do projeto no Heroku</strong></summary><br />
+
+  - https://wine-club-99app.herokuapp.com/
+
 <summary><strong> Iniciando o projeto</strong></summary><br />
 
 1. Clone o projeto com o comando:
